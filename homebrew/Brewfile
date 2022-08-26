@@ -1,0 +1,13 @@
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
+
+brew "git"
+brew "mas"
+
+cask "intellij-idea"
+cask "iterm2"
+cask "slack"
+cask "visual-studio-code"
+
+mas "Bitwarden", id: 1352778147

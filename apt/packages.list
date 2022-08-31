@@ -1,0 +1,3 @@
+# Install with:
+# xargs -a <(awk '! /^ *(#|$)/' "packages.list") -r -- sudo apt install -y
+zsh

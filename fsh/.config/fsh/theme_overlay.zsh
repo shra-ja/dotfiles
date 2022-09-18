@@ -1,0 +1,2 @@
+: ${FAST_HIGHLIGHT_STYLES[${FAST_THEME_NAME}path]::=fg=39}
+: ${FAST_HIGHLIGHT_STYLES[${FAST_THEME_NAME}path-to-dir]::=fg=39,underline}

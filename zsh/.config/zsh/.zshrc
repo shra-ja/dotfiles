@@ -80,6 +80,47 @@ setopt long_list_jobs # Print job notifications in the long format by default
 ### Aliases ###
 ###############
 
+# Show all 256 colours
+function show-color-palette {
+  for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
+}
+
+###################
+### Completions ###
+###################
+
+# Documentation for completions can be found here: https://zsh.sourceforge.io/Doc/Release/Completion-System.html
+
+# Enable completion menu
+zstyle ':completion:*:*:*:*:*' menu select
+
+# Enable completers: expand *. for extensions, then standard completion, then approximate completion for corrections
+zstyle ':completion:*' completer _extensions _complete _approximate
+
+# Enable matchers: case-insensitive, then partial word, then substring
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+# Enable colors for completion entries using LS_COLORS
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+# Group results by category
+zstyle ':completion:*' group-name ''
+
+# Color group names
+zstyle ':completion:*:*:*:*:descriptions' format '%F{green}-- %d --%f'
+zstyle ':completion:*:*:*:*:corrections' format '%F{yellow}!- %d (errors: %e) -!%f'
+zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
+zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
+
+# Reorder completion results for commands
+zstyle ':completion:*:*:-command-:*:*' group-order alias builtins functions commands
+
+# Ignore cache for up-to-date results - has a performance impact
+zstyle ':completion:*' rehash true
+
+# Add process completion
+zstyle ':completion:*:*:*:*:processes' command 'ps -u $USERNAME -o pid,%cpu,cputime,cmd'
+
 ###############
 ### Plugins ###
 ###############

@@ -35,6 +35,44 @@ export GPG_TTY=$TTY
 ### zsh Options ###
 ###################
 
+# Documentation for options can be found here: https://zsh.sourceforge.io/Doc/Release/Options.html
+# Options are grouped according to the documentation
+# Prompt options are handled by Powerline10k
+
+# 1. Changing Directories
+setopt auto_cd # cd to dir without typing cd
+
+setopt auto_pushd # Auto push cd'd dirs onto stack
+setopt pushd_ignore_dups # Dedupe stack
+setopt pushd_minus # Flip plus and minus to specify a stack dir by number
+
+# 2. Completion
+setopt auto_list # Automatically list choices on an ambiguous completion
+setopt auto_menu # Automatically use menu completion after the second tab
+unsetopt menu_complete # Do not auto-select the first completion
+
+setopt always_to_end # Move cursor to end if word had a match
+setopt complete_in_word # Run completion from the cursor location
+
+# 4. History
+setopt extended_history # Records timestamps in history file
+setopt hist_expire_dups_first # Delete duplicates first when internal history needs trimming
+setopt hist_find_no_dups # Ignore duplicates when searching through the history
+setopt hist_ignore_dups # Do not add repeated commands to the history
+setopt hist_ignore_space # Do not add commands that start with a space to the history
+setopt hist_verify # Show command with history expansion to user before running it
+setopt share_history # Share history between shells
+
+# 6. Input/Output
+setopt correct # Auto-correct typos in commands
+setopt correct_all # Auto-correct typos in arguments
+
+setopt interactive_comments # Allow comments in interactive shells
+unsetopt flowcontrol # Disables output flow control via stop/start (Ctrl+S/Ctrl+Q) reclaiming those keybinds
+
+# 7. Job Control
+setopt long_list_jobs # Print job notifications in the long format by default
+
 ###############
 ### Aliases ###
 ###############

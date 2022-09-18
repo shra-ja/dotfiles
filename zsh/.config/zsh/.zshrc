@@ -14,9 +14,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-###############
-### Exports ###
-###############
+#################
+### Variables ###
+#################
 
 # Editor
 export EDITOR="vim"
@@ -32,7 +32,12 @@ export SAVEHIST=10000                   # Maximum events for history saved to fi
 export GPG_TTY=$TTY
 
 # fast-syntax-highlighting
-export FAST_WORK_DIR="$XDG_CONFIG_HOME/fsh"
+FAST_WORK_DIR="$XDG_CONFIG_HOME/fsh"
+
+# zsh-history-substring-search
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=(none)
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND=(none)
+HISTORY_SUBSTRING_SEARCH_PREFIXED=true
 
 ###################
 ### zsh Options ###
@@ -135,9 +140,10 @@ source ${ZDOTDIR:-${HOME}/.config/zsh}/.zcomet/bin/zcomet.zsh
 
 # Load plugins with zcomet (plugins are cloned to .zcomet/repos)
 
-# Load syntax, auto-suggest, and powerlevel10k last
+# Load syntax, history-substring-search, auto-suggest, and powerlevel10k last
 ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 zcomet load zdharma-continuum/fast-syntax-highlighting
+zcomet load zsh-users/zsh-history-substring-search
 zcomet load zsh-users/zsh-autosuggestions
 zcomet load romkatv/powerlevel10k
 
@@ -150,3 +156,10 @@ zcomet compinit
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
+####################
+### Key Bindings ###
+####################
+
+bindkey "$terminfo[kcuu1]" history-substring-search-up   # Up Arrow
+bindkey "$terminfo[kcud1]" history-substring-search-down # Down Arrow

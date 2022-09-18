@@ -31,6 +31,9 @@ export SAVEHIST=10000                   # Maximum events for history saved to fi
 # Set GPG_TTY for GPG signing
 export GPG_TTY=$TTY
 
+# fast-syntax-highlighting
+export FAST_WORK_DIR="$XDG_CONFIG_HOME/fsh"
+
 ###################
 ### zsh Options ###
 ###################
@@ -93,7 +96,7 @@ source ${ZDOTDIR:-${HOME}/.config/zsh}/.zcomet/bin/zcomet.zsh
 
 # Load syntax, auto-suggest, and powerlevel10k last
 ZSH_AUTOSUGGEST_MANUAL_REBIND=1
-zcomet load zsh-users/zsh-syntax-highlighting
+zcomet load zdharma-continuum/fast-syntax-highlighting
 zcomet load zsh-users/zsh-autosuggestions
 zcomet load romkatv/powerlevel10k
 

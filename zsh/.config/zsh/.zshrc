@@ -139,6 +139,7 @@ fi
 source ${ZDOTDIR:-${HOME}/.config/zsh}/.zcomet/bin/zcomet.zsh
 
 # Load plugins with zcomet (plugins are cloned to .zcomet/repos)
+zcomet load agkozak/zsh-z
 
 # Load syntax, history-substring-search, auto-suggest, and powerlevel10k last
 ZSH_AUTOSUGGEST_MANUAL_REBIND=1

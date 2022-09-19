@@ -5,6 +5,8 @@ tap "homebrew/core"
 brew "git"
 brew "mas"
 brew "stow"
+brew "fzf"
+brew "zoxide"
 
 cask "intellij-idea"
 cask "iterm2"

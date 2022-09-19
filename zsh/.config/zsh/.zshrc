@@ -65,6 +65,9 @@ unsetopt menu_complete # Do not auto-select the first completion
 setopt always_to_end # Move cursor to end if word had a match
 setopt complete_in_word # Run completion from the cursor location
 
+# 3. Expansion and Globbing
+setopt glob_dots # Allow completion on hidden files without having to explicitly specify the dot
+
 # 4. History
 setopt extended_history # Records timestamps in history file
 setopt hist_expire_dups_first # Delete duplicates first when internal history needs trimming

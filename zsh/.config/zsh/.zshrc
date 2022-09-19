@@ -162,5 +162,10 @@ zcomet compinit
 ### Key Bindings ###
 ####################
 
-bindkey "$terminfo[kcuu1]" history-substring-search-up   # Up Arrow
-bindkey "$terminfo[kcud1]" history-substring-search-down # Down Arrow
+# Up arrow - search backwards in history
+bindkey '^[OA' history-substring-search-up
+bindkey '^[[A' history-substring-search-up
+
+# Down arrow - search forwards in history
+bindkey '^[OB' history-substring-search-down
+bindkey '^[[B' history-substring-search-down

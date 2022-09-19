@@ -151,6 +151,9 @@ else
   zcomet load agkozak/zsh-z # Else fall back to zsh-z
 fi
 
+zcomet load ohmyzsh plugins/git
+zcomet load ohmyzsh plugins/gitfast
+
 # Load syntax, history-substring-search, auto-suggest, and powerlevel10k last
 ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 zcomet load zdharma-continuum/fast-syntax-highlighting

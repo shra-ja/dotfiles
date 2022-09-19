@@ -39,6 +39,9 @@ HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=(none)
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND=(none)
 HISTORY_SUBSTRING_SEARCH_PREFIXED=true
 
+# PATH updates
+export PATH=$PATH:$HOME/.local/bin
+
 ###################
 ### zsh Options ###
 ###################
@@ -61,6 +64,9 @@ unsetopt menu_complete # Do not auto-select the first completion
 
 setopt always_to_end # Move cursor to end if word had a match
 setopt complete_in_word # Run completion from the cursor location
+
+# 3. Expansion and Globbing
+setopt glob_dots # Allow completion on hidden files without having to explicitly specify the dot
 
 # 4. History
 setopt extended_history # Records timestamps in history file
@@ -139,7 +145,11 @@ fi
 source ${ZDOTDIR:-${HOME}/.config/zsh}/.zcomet/bin/zcomet.zsh
 
 # Load plugins with zcomet (plugins are cloned to .zcomet/repos)
-zcomet load agkozak/zsh-z
+if (( $+commands[zoxide] )); then
+  zcomet load ajeetdsouza/zoxide # Load zoxide if installed
+else
+  zcomet load agkozak/zsh-z # Else fall back to zsh-z
+fi
 
 # Load syntax, history-substring-search, auto-suggest, and powerlevel10k last
 ZSH_AUTOSUGGEST_MANUAL_REBIND=1

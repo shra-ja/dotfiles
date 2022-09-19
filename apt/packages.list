@@ -1,4 +1,14 @@
 # Install with:
 # xargs -a <(awk '! /^ *(#|$)/' "packages.list") -r -- sudo apt install -y
+
 stow
 zsh
+fzf
+fd-find
+bat
+exa
+
+# apt package for zoxide is out-of-date
+# Up-to-date installation can be done with:
+# curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
+# zoxide

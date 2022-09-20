@@ -6,7 +6,6 @@ brew "git"
 brew "mas"
 
 brew "stow"
-brew "fzf"
 brew "zoxide"
 brew "fd"
 brew "bat"

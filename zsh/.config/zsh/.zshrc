@@ -154,6 +154,10 @@ fi
 zcomet load ohmyzsh plugins/git
 zcomet load ohmyzsh plugins/gitfast
 
+# Load fzf as per recommended instructions in zcomet README
+zcomet load junegunn/fzf shell completion.zsh key-bindings.zsh
+(( ${+commands[fzf]} )) || ~[fzf]/install --bin
+
 # Load syntax, history-substring-search, auto-suggest, and powerlevel10k last
 ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 zcomet load zdharma-continuum/fast-syntax-highlighting

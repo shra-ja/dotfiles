@@ -154,6 +154,9 @@ fi
 zcomet load ohmyzsh plugins/git
 zcomet load ohmyzsh plugins/gitfast
 
+zcomet load asdf-vm/asdf
+zcomet fpath asdf-vm/asdf completions
+
 # Load fzf as per recommended instructions in zcomet README
 zcomet load junegunn/fzf shell completion.zsh key-bindings.zsh
 (( ${+commands[fzf]} )) || ~[fzf]/install --bin

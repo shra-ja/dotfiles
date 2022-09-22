@@ -1,7 +1,7 @@
 # XDG
 export XDG_CONFIG_HOME=$HOME/.config
-export XDG_CACHE_HOME=$XDG_CONFIG_HOME/.cache
-export XDG_DATA_HOME=$XDG_CONFIG_HOME/.local/share
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
 
 ####################################
 ### Powerlevel10k Instant Prompt ###
@@ -30,6 +30,10 @@ export SAVEHIST=10000                   # Maximum events for history saved to fi
 
 # Set GPG_TTY for GPG signing
 export GPG_TTY=$TTY
+
+# asdf
+export ASDF_CONFIG_FILE="$XDG_CONFIG_HOME/asdf/.asdfrc"
+export ASDF_DATA_DIR="${XDG_DATA_HOME}/asdf"
 
 # fast-syntax-highlighting
 FAST_WORK_DIR="$XDG_CONFIG_HOME/fsh"

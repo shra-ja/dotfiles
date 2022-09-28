@@ -10,10 +10,15 @@ brew "zoxide"
 brew "fd"
 brew "bat"
 brew "exa"
+brew "awscli"
 
+cask "authy"
+cask "aws-vault"
+cask "docker"
 cask "intellij-idea"
 cask "iterm2"
 cask "slack"
 cask "visual-studio-code"
+cask "zoom"
 
 mas "Bitwarden", id: 1352778147

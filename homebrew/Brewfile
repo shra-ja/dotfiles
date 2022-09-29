@@ -11,6 +11,8 @@ brew "fd"
 brew "bat"
 brew "exa"
 brew "awscli"
+brew "kubectl"
+brew "kubectx"
 
 cask "authy"
 cask "aws-vault"

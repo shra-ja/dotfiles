@@ -188,10 +188,22 @@ zcomet compinit
 ### Key Bindings ###
 ####################
 
-# Up arrow - search backwards in history
+# Set emacs mode permanently to include subshells
+bindkey -e
+
+# Bind up arrow - search backwards in history
 bindkey '^[OA' history-substring-search-up
 bindkey '^[[A' history-substring-search-up
 
-# Down arrow - search forwards in history
+# Bind down arrow - search forwards in history
 bindkey '^[OB' history-substring-search-down
 bindkey '^[[B' history-substring-search-down
+
+# Rebind hex 0x15 - delete everything to the left of the cursor, rather than the whole line
+bindkey "^U" backward-kill-line
+
+# binds hex 0x18 0x7f - delete everything to the left of the cursor
+bindkey "^X\\x7f" backward-kill-line
+
+# Bind hex 0x18 0x1f - redo
+bindkey "^X^_" redo

@@ -1,6 +1,7 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
+tap "buo/cask-upgrade"
 
 brew "git"
 brew "mas"

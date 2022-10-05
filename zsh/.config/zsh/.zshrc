@@ -27,6 +27,7 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"   # zsh config location
 export HISTFILE="$ZDOTDIR/.zhistory"    # History location
 export HISTSIZE=10000                   # Maximum events for history in memory
 export SAVEHIST=10000                   # Maximum events for history saved to file
+export WORDCHARS=''                     # Characters to consider part of a word
 
 # Set GPG_TTY for GPG signing
 export GPG_TTY=$TTY

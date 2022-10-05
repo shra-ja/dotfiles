@@ -168,9 +168,12 @@ zcomet load blimmer/zsh-aws-vault
 zcomet load junegunn/fzf shell completion.zsh key-bindings.zsh
 (( ${+commands[fzf]} )) || ~[fzf]/install --bin
 
-# Load syntax, history-substring-search, auto-suggest, and powerlevel10k last
-ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+# Load syntax highlighting with overrides
 zcomet load zdharma-continuum/fast-syntax-highlighting
+FAST_HIGHLIGHT[git-cmsg-len]=72 # Increase commit message length limit to 72
+
+# Load history-substring-search, auto-suggestions, and powerlevel10k last
+ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 zcomet load zsh-users/zsh-history-substring-search
 zcomet load zsh-users/zsh-autosuggestions
 zcomet load romkatv/powerlevel10k

@@ -710,6 +710,16 @@
   # typeset -g POWERLEVEL9K_ASDF_JULIA_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # typeset -g POWERLEVEL9K_ASDF_JULIA_SHOW_ON_UPGLOB='*.foo|*.bar'
 
+  # Terraform version from asdf.
+  typeset -g POWERLEVEL9K_ASDF_TERRAFORM_FOREGROUND=135
+  # typeset -g POWERLEVEL9K_ASDF_TERRAFORM_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  typeset -g POWERLEVEL9K_ASDF_TERRAFORM_SHOW_ON_UPGLOB='*.hcl|*.tf'
+
+  # Terragrunt version from asdf.
+  typeset -g POWERLEVEL9K_ASDF_TERRAGRUNT_FOREGROUND=99
+  # typeset -g POWERLEVEL9K_ASDF_TERRAGRUNT_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  typeset -g POWERLEVEL9K_ASDF_TERRAGRUNT_SHOW_ON_UPGLOB='*.hcl'
+
   ##########[ nordvpn: nordvpn connection status, linux only (https://nordvpn.com/) ]###########
   # NordVPN connection indicator color.
   typeset -g POWERLEVEL9K_NORDVPN_FOREGROUND=39

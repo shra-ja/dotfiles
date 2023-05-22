@@ -83,8 +83,8 @@ setopt hist_verify # Show command with history expansion to user before running 
 setopt share_history # Share history between shells
 
 # 6. Input/Output
-setopt correct # Auto-correct typos in commands
-setopt correct_all # Auto-correct typos in arguments
+unsetopt correct # Auto-correct typos in commands
+unsetopt correct_all # Auto-correct typos in arguments
 
 setopt interactive_comments # Allow comments in interactive shells
 unsetopt flowcontrol # Disables output flow control via stop/start (Ctrl+S/Ctrl+Q) reclaiming those keybinds

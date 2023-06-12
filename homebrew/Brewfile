@@ -18,6 +18,7 @@ brew "kubectx"
 brew "sops"
 brew "helm"
 brew "skaffold"
+brew "argocd"
 
 cask "authy"
 cask "aws-vault"

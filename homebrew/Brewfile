@@ -21,6 +21,7 @@ brew "sops"
 brew "helm"
 brew "skaffold"
 brew "argocd"
+brew "pre-commit"
 
 cask "authy"
 cask "aws-vault"

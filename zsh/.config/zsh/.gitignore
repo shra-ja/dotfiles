@@ -1,4 +1,5 @@
 .zcomet/
 .zcompcache/
+.zsh_sessions/
 .zcompdump*
 .zhistory

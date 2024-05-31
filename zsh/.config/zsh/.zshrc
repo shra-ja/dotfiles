@@ -36,6 +36,9 @@ export GPG_TTY=$TTY
 export ASDF_CONFIG_FILE="$XDG_CONFIG_HOME/asdf/.asdfrc"
 export ASDF_DATA_DIR="${XDG_DATA_HOME}/asdf"
 
+# asdf-java - Set JAVA_HOME
+[[ ! -f $XDG_DATA_HOME/asdf/plugins/java/set-java-home.zsh ]] || source $XDG_DATA_HOME/asdf/plugins/java/set-java-home.zsh
+
 # fast-syntax-highlighting
 FAST_WORK_DIR="$XDG_CONFIG_HOME/fsh"
 
@@ -211,3 +214,10 @@ bindkey "^X\\x7f" backward-kill-line
 
 # Bind hex 0x18 0x1f - redo
 bindkey "^X^_" redo
+
+#########################
+### Private Overrides ###
+#########################
+
+# Source a private zshrc for bespoke machine overrides if required
+[[ ! -f $XDG_CONFIG_HOME/zsh-private/.zshrc ]] || source $XDG_CONFIG_HOME/zsh-private/.zshrc

@@ -21,12 +21,17 @@ Install all Homebrew packages with:
 ```
 
 ### Shell Setup
-Use GNU Stow to set up all other folders
+Use GNU Stow to set up all other folders:
 ```console
 > stow asdf fsh iterm2 zsh
 ```
 
-By default, GNU Stow targets the parent directory by default but if you checked out to a different directory then you will need to add an addition target argument:
+You can restow an individual package with:
+```console
+> stow -R zsh
+```
+
+By default, GNU Stow targets the parent directory by default but if you checked out to a different directory then you will need to add an additional target argument:
 ```console
 > stow -t ~ asdf fsh iterm2 zsh
 ```

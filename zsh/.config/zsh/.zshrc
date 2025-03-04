@@ -47,6 +47,9 @@ HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=(none)
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND=(none)
 HISTORY_SUBSTRING_SEARCH_PREFIXED=true
 
+# zoxide
+export _ZO_DATA_DIR="$XDG_DATA_HOME/zoxide"
+
 # PATH updates
 export PATH=$PATH:$HOME/.local/bin
 
@@ -153,12 +156,6 @@ fi
 source ${ZDOTDIR:-${HOME}/.config/zsh}/.zcomet/bin/zcomet.zsh
 
 # Load plugins with zcomet (plugins are cloned to .zcomet/repos)
-if (( $+commands[zoxide] )); then
-  zcomet load ajeetdsouza/zoxide # Load zoxide if installed
-else
-  zcomet load agkozak/zsh-z # Else fall back to zsh-z
-fi
-
 zcomet load ohmyzsh plugins/git
 zcomet load ohmyzsh plugins/gitfast
 
@@ -166,6 +163,8 @@ zcomet load asdf-vm/asdf
 zcomet fpath asdf-vm/asdf completions
 
 zcomet load blimmer/zsh-aws-vault
+
+zcomet trigger z ajeetdsouza/zoxide # Lazy load zoxide so compinit runs before its install script
 
 # Load fzf as per recommended instructions in zcomet README
 zcomet load junegunn/fzf shell completion.zsh key-bindings.zsh

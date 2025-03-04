@@ -21,7 +21,7 @@
       "Transparency": 0,
       "Blur": true,
       "Unlimited Scrollback": false,
-      "Scrollback Lines": 1000,
+      "Scrollback Lines": 10000,
       "Character Encoding": 4,
       "Terminal Type": "xterm-256color",
       "Mouse Reporting": true,

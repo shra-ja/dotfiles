@@ -190,6 +190,27 @@ zcomet compinit
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
+#################
+### Tab Title ###
+#################
+
+autoload -Uz add-zsh-hook
+
+function set-title {
+  # Set tab title to either current git repo or current directory
+  if [ -z $VCS_STATUS_WORKDIR ]; then
+    TAB_TITLE=${PWD}
+  else
+    TAB_TITLE=${VCS_STATUS_WORKDIR}
+  fi
+
+  # Set the title of the terminal window, removing the path prefix
+  # Note: Title doesn't reset to current directory when leaving a git repo until the second command
+  print -Pn "\e]1;${TAB_TITLE##*/}\a"
+}
+
+add-zsh-hook precmd set-title
+
 ####################
 ### Key Bindings ###
 ####################

@@ -638,7 +638,7 @@
   # Go version from asdf.
   typeset -g POWERLEVEL9K_ASDF_GOLANG_FOREGROUND=37
   # typeset -g POWERLEVEL9K_ASDF_GOLANG_VISUAL_IDENTIFIER_EXPANSION='⭐'
-  # typeset -g POWERLEVEL9K_ASDF_GOLANG_SHOW_ON_UPGLOB='*.foo|*.bar'
+  typeset -g POWERLEVEL9K_ASDF_GOLANG_SHOW_ON_UPGLOB='*.go|go.mod'
 
   # Node.js version from asdf.
   typeset -g POWERLEVEL9K_ASDF_NODEJS_FOREGROUND=70
@@ -729,6 +729,9 @@
   typeset -g POWERLEVEL9K_ASDF_TERRAGRUNT_FOREGROUND=99
   # typeset -g POWERLEVEL9K_ASDF_TERRAGRUNT_VISUAL_IDENTIFIER_EXPANSION='⭐'
   typeset -g POWERLEVEL9K_ASDF_TERRAGRUNT_SHOW_ON_UPGLOB='*.hcl'
+
+  # Hide pre-commit version from asdf unless explicitly changed.
+  typeset -g POWERLEVEL9K_ASDF_PRE_COMMIT_PROMPT_ALWAYS_SHOW=false
 
   ##########[ nordvpn: nordvpn connection status, linux only (https://nordvpn.com/) ]###########
   # NordVPN connection indicator color.

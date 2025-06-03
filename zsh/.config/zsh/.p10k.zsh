@@ -730,6 +730,9 @@
   # typeset -g POWERLEVEL9K_ASDF_TERRAGRUNT_VISUAL_IDENTIFIER_EXPANSION='⭐'
   typeset -g POWERLEVEL9K_ASDF_TERRAGRUNT_SHOW_ON_UPGLOB='*.hcl'
 
+  # Hide pre-commit version from asdf unless explicitly changed.
+  typeset -g POWERLEVEL9K_ASDF_PRE_COMMIT_PROMPT_ALWAYS_SHOW=false
+
   ##########[ nordvpn: nordvpn connection status, linux only (https://nordvpn.com/) ]###########
   # NordVPN connection indicator color.
   typeset -g POWERLEVEL9K_NORDVPN_FOREGROUND=39

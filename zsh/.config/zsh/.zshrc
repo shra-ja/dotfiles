@@ -51,7 +51,14 @@ HISTORY_SUBSTRING_SEARCH_PREFIXED=true
 export _ZO_DATA_DIR="$XDG_DATA_HOME/zoxide"
 
 # PATH updates
-export PATH=$PATH:$HOME/.local/bin
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+
+# homebrew
+if (( $+commands[brew] )); then
+  eval "$(brew shellenv)"
+fi
 
 ###################
 ### zsh Options ###
@@ -146,7 +153,6 @@ zstyle ':completion:*' rehash true
 zstyle ':completion:*:*:*:*:processes' command 'ps -u $USERNAME -o pid,%cpu,cputime,cmd'
 
 # Set up fpath completions
-fpath=(${ASDF_DIR}/completions $fpath)
 fpath=(${HOME}/.granted/zsh_autocomplete/assume/ $fpath)
 fpath=(${HOME}/.granted/zsh_autocomplete/granted/ $fpath)
 
@@ -165,9 +171,6 @@ source ${ZDOTDIR:-${HOME}/.config/zsh}/.zcomet/bin/zcomet.zsh
 # Load plugins with zcomet (plugins are cloned to .zcomet/repos)
 zcomet load ohmyzsh plugins/git
 zcomet load ohmyzsh plugins/gitfast
-
-zcomet load asdf-vm/asdf
-zcomet fpath asdf-vm/asdf completions
 
 zcomet load blimmer/zsh-aws-vault
 

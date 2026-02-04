@@ -236,13 +236,10 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[OB' history-substring-search-down
 bindkey '^[[B' history-substring-search-down
 
-# Rebind hex 0x15 - delete everything to the left of the cursor, rather than the whole line
+# Rebind hex 0x15 - delete everything to the left of the cursor, rather than the whole line (for iTerm2: Command + Backspace)
 bindkey "^U" backward-kill-line
 
-# binds hex 0x18 0x7f - delete everything to the left of the cursor
-bindkey "^X\\x7f" backward-kill-line
-
-# Bind hex 0x18 0x1f - redo
+# Bind hex 0x18 0x1f - redo (for iTerm2: Command + Shift + Z)
 bindkey "^X^_" redo
 
 #########################

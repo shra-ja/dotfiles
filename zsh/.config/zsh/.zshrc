@@ -107,6 +107,8 @@ function show-color-palette {
   for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
 }
 
+alias assume=". assume" # Source assume for granted to handle environment variables correctly
+
 ###################
 ### Completions ###
 ###################
@@ -142,6 +144,11 @@ zstyle ':completion:*' rehash true
 
 # Add process completion
 zstyle ':completion:*:*:*:*:processes' command 'ps -u $USERNAME -o pid,%cpu,cputime,cmd'
+
+# Set up fpath completions
+fpath=(${ASDF_DIR}/completions $fpath)
+fpath=(${HOME}/.granted/zsh_autocomplete/assume/ $fpath)
+fpath=(${HOME}/.granted/zsh_autocomplete/granted/ $fpath)
 
 ###############
 ### Plugins ###

@@ -5,7 +5,6 @@ stow
 zsh
 fd-find
 bat
-exa
 
 # apt package for zoxide is out-of-date
 # Up-to-date installation can be done with:

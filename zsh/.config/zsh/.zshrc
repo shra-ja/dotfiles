@@ -50,15 +50,17 @@ HISTORY_SUBSTRING_SEARCH_PREFIXED=true
 # zoxide
 export _ZO_DATA_DIR="$XDG_DATA_HOME/zoxide"
 
+# homebrew for both macOS and Linuxbrew
+for brew_bin in /opt/homebrew/bin/brew /home/linuxbrew/.linuxbrew/bin/brew; do
+  if [[ -x $brew_bin ]]; then
+    eval "$($brew_bin shellenv)"
+    break
+  fi
+done
+
 # PATH updates
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$ASDF_DATA_DIR/shims:$PATH"
-export PATH="/opt/homebrew/bin:$PATH"
-
-# homebrew
-if (( $+commands[brew] )); then
-  eval "$(brew shellenv)"
-fi
 
 ###################
 ### zsh Options ###
